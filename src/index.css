@@ -1,0 +1,21 @@
+:root {
+    --primary: #10B1BB;
+    --text: #282828;
+    --light-text: #28282880;
+    --divider: #28282820;
+}
+
+h1, h2 {
+    margin-bottom: 0;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 1.25em;
+    margin-top: 2em;
+}
+
+hr {
+    border-color: var(--divider);
+    margin-bottom: 1em;
+}
