@@ -2,7 +2,10 @@ import {Button} from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import HomeIcon from "@mui/icons-material/Home";
+import CodeIcon from '@mui/icons-material/Code';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import {BaseList} from "../components/BaseList.jsx";
+
 import {
   ShowCodeBlock
 } from "../components/ShowCodeBlock.jsx"; import {Paragraph} from "../components/Paragraph.jsx";
@@ -121,5 +124,37 @@ import {
     startIcon={<HomeIcon/>}
   >
     Home
+  </Button>
+</ShowCodeBlock>
+
+## Github Inspired
+---
+
+<ShowCodeBlock>
+  <Button
+    sx={{
+      height: "32px",
+      backgroundColor: "#347d39",
+      color: "white",
+      fontSize: "0.9em",
+      fontFamily: "Roboto, sans-serif",
+      border: "1px solid rgba(205,217,229,0.1)",
+      borderRadius: "0.4em",
+      padding: "0.25em 0.75em",
+      "& .MuiButton-startIcon>*:nth-of-type(1)": {
+        fontSize: "24px",
+        marginRight: "-4px"
+      },
+      "& .MuiButton-endIcon>*:nth-of-type(1)": {
+        marginLeft: "-8px"
+      },
+      "&:hover": {
+        backgroundColor: "#46954a",
+      }
+    }}
+    startIcon={<CodeIcon/>}
+    endIcon={<ArrowDropDownIcon/>}
+  >
+    Code
   </Button>
 </ShowCodeBlock>

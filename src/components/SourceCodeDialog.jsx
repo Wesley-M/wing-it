@@ -49,8 +49,9 @@ export const SourceCodeDialog = ({ open, onClose, component, Source }) => {
                 border: "1px solid var(--divider)",
                 borderRadius: "5px",
                 width: "100%",
-                height: "5em",
-                marginBottom: "1em"
+                height: "auto",
+                marginBottom: "1em",
+                padding: "1em"
               }}
             >
               {component}

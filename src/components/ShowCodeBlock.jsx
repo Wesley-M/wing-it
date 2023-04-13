@@ -9,7 +9,20 @@ import {Box} from "@mui/material";
 export const ShowCodeBlock = ({children}) => {
   const [open, setOpen] = useState(false);
   const [exports, setExports] = useState({default: runtime.Fragment});
-  const childrenString = `\`\`\`jsx \n${reactElementToJSXString(children).trim()} \n \`\`\``
+
+  /**
+   * It removes numbers introduced in tag names (e.g. Avatar2)
+   * */
+  const handleTagDisplayName = (obj) => {
+    const type = obj?.type;
+    if (typeof type === "string") {
+      return type
+    } else {
+      return type?.render?.name.replace(/[0-9]/g, '') || type?.type?.render?.displayName;
+    }
+  }
+
+  const childrenString = `\`\`\`jsx \n${reactElementToJSXString(children, { displayName: handleTagDisplayName }).trim()} \n \`\`\``
 
   // When the children change, it also changes the evaluation of the code block
   useEffect(() => {

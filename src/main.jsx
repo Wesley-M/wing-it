@@ -9,6 +9,8 @@ import {
 import {Root} from "./Root.jsx";
 import OverviewPage from "./pages/overview.mdx";
 import ButtonPage from "./pages/button.mdx";
+import CardPage from "./pages/card.mdx";
+import NotificationPage from "./pages/notification.mdx";
 import './index.css'
 
 const router = createHashRouter([
@@ -17,7 +19,9 @@ const router = createHashRouter([
     element: <Root/>,
     children: [
       {index: true, element: <OverviewPage/>},
-      {path: "button", element: <ButtonPage/>}
+      {path: "button", element: <ButtonPage/>},
+      {path: "card", element: <CardPage/>},
+      {path: "notification", element: <NotificationPage/>}
     ]
   },
 ]);

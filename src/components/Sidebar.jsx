@@ -1,8 +1,7 @@
 import {Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemText, Toolbar} from "@mui/material";
 import { Logo } from "./Logo.jsx";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import { useUrlListener } from "../hooks/useUrlListener.js";
-import { useState } from "react";
 
 export const Sidebar = ({ drawerWidth, mobileOpen, handleDrawerToggle }) => {
   const menuEntries = [
@@ -13,6 +12,14 @@ export const Sidebar = ({ drawerWidth, mobileOpen, handleDrawerToggle }) => {
     {
       name: "Button",
       to: "/button"
+    },
+    {
+      name: "Card",
+      to: "/card"
+    },
+    {
+      name: "Notification",
+      to: "/notification"
     }
   ]
 
