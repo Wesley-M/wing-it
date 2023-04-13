@@ -18,11 +18,11 @@ export const ShowCodeBlock = ({children}) => {
     if (typeof type === "string") {
       return type
     } else {
-      return type?.render?.name.replace(/[0-9]/g, '') || type?.type?.render?.displayName;
+      return obj.props?.tag;
     }
   }
 
-  const childrenString = `\`\`\`jsx \n${reactElementToJSXString(children, { displayName: handleTagDisplayName }).trim()} \n \`\`\``
+  const childrenString = `\`\`\`jsx \n${reactElementToJSXString(children, { displayName: handleTagDisplayName, filterProps: ["tag"] }).trim()} \n \`\`\``
 
   // When the children change, it also changes the evaluation of the code block
   useEffect(() => {

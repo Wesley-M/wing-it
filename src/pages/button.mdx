@@ -30,6 +30,7 @@ import {
 <BaseList>
   <ShowCodeBlock>
     <Button
+      tag="Button"
       sx={{
         height: "48px",
         backgroundColor: "rgb(229, 9, 20)",
@@ -45,14 +46,13 @@ import {
           filter: "grayscale(0.1)"
         }
       }}
-      endIcon={<ArrowForwardIosIcon/>}
-    >
-      Get Started
-    </Button>
+      endIcon={<ArrowForwardIosIcon tag="ArrowForwardIosIcon"/>}
+    >Get Started</Button>
   </ShowCodeBlock>
 
   <ShowCodeBlock>
     <Button
+      tag="Button"
       sx={{
         height: "36px",
         backgroundColor: "rgba(109, 109, 110, 0.7)",
@@ -69,10 +69,8 @@ import {
           backgroundColor: "rgba(109, 109, 110, 0.8)",
         }
       }}
-      startIcon={<InfoOutlinedIcon/>}
-    >
-      More informations
-    </Button>
+      startIcon={<InfoOutlinedIcon tag="InfoOutlinedIcon"/>}
+    >More informations</Button>
   </ShowCodeBlock>
 </BaseList>
 
@@ -81,6 +79,7 @@ import {
 
 <ShowCodeBlock>
   <Button
+    tag="Button"
     sx={{
       height: "36px",
       backgroundColor: "#0f0f0f",
@@ -95,9 +94,7 @@ import {
         backgroundColor: "#0f0f0fdd",
       }
     }}
-  >
-    Subscribe
-  </Button>
+  >Subscribe</Button>
 </ShowCodeBlock>
 
 ## Twitter Inspired
@@ -105,6 +102,7 @@ import {
 
 <ShowCodeBlock>
   <Button
+    tag="Button"
     sx={{
       height: "48px",
       backgroundColor: "transparent",
@@ -121,10 +119,8 @@ import {
         backgroundColor: "#00000022",
       }
     }}
-    startIcon={<HomeIcon/>}
-  >
-    Home
-  </Button>
+    startIcon={<HomeIcon tag="HomeIcon"/>}
+  >Home</Button>
 </ShowCodeBlock>
 
 ## Github Inspired
@@ -132,6 +128,7 @@ import {
 
 <ShowCodeBlock>
   <Button
+    tag="Button"
     sx={{
       height: "32px",
       backgroundColor: "#347d39",
@@ -152,9 +149,7 @@ import {
         backgroundColor: "#46954a",
       }
     }}
-    startIcon={<CodeIcon/>}
-    endIcon={<ArrowDropDownIcon/>}
-  >
-    Code
-  </Button>
+    startIcon={<CodeIcon tag="CodeIcon"/>}
+    endIcon={<ArrowDropDownIcon tag="ArrowDropDownIcon"/>}
+  >Code</Button>
 </ShowCodeBlock>

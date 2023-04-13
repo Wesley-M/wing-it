@@ -24,6 +24,7 @@ import {
 <BaseList>
   <ShowCodeBlock>
     <Box
+      tag="Box"
       sx={{
         display: "flex",
         flexDirection: "row",
@@ -36,21 +37,26 @@ import {
       }}
     >
       <Avatar
+        tag="Avatar"
         alt="Company"
         src="https://media.licdn.com/media/AAYQAgQJAAgAAQAAAAAAADqOZP5J1jpVQKaKm9bNEkz91w.png"
         variant="square"
         sx={{width: 60, height: 60, margin: "10px"}}
       />
 
-      <Typography sx={{fontSize: "0.9em", textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap"}}>
-        <strong>Resumo de:</strong> quinta-feira: Páscoa com menos vagas temporárias;<br/>chuva no feriadão e outras
-        notícias.
-      </Typography>
+      <Typography
+        tag="Typography"
+        sx={{
+          fontSize: "0.9em",
+          overflow: "hidden",
+          whiteSpace: "nowrap"
+        }}
+      ><strong>Resumo de:</strong> quinta-feira: Páscoa com menos vagas temporárias;<br/>chuva no feriadão e outras notícias.</Typography>
 
-      <Stack sx={{padding: "0 1em"}} alignItems="center">
-        <Typography sx={{color: "gray", fontSize: "0.8em"}}>5 d</Typography>
-        <IconButton aria-label="Show more button">
-          <MoreHorizIcon/>
+      <Stack tag="Stack" sx={{padding: "0 1em"}} alignItems="center">
+        <Typography tag="Typography" sx={{color: "gray", fontSize: "0.8em"}}>5 d</Typography>
+        <IconButton tag="IconButton" aria-label="Show more button">
+          <MoreHorizIcon tag="MoreHorizIcon"/>
         </IconButton>
       </Stack>
     </Box>
@@ -58,6 +64,7 @@ import {
 
   <ShowCodeBlock>
     <Box
+      tag="Box"
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -72,6 +79,7 @@ import {
       }}
     >
       <Box
+        tag="Box"
         sx={{
           display: "inline-flex",
           flexDirection: "column",
@@ -81,39 +89,37 @@ import {
         }}
       >
         <Typography
+          tag="Typography"
           sx={{
             fontSize: "0.75em",
             fontWeight: "bold",
             color: "white",
             opacity: 0.5
           }}
-        >
-          <>Deezer</>
-        </Typography>
+        >Deezer</Typography>
 
         <Typography
+          tag="Typography"
           sx={{
             fontSize: "1.2em",
             fontWeight: "bolder",
             color: "white"
           }}
-        >
-          <>Wuthering Heights</>
-        </Typography>
+        >Wuthering Heights</Typography>
 
         <Typography
+          tag="Typography"
           sx={{
             fontSize: "0.7em",
             fontWeight: "bold",
             color: "white",
             opacity: 0.7
           }}
-        >
-          <>Anna Maz</>
-        </Typography>
+        >Anna Maz</Typography>
       </Box>
 
       <Box
+        tag="Box"
         sx={{
           display: "flex",
           flexDirection: "row",
@@ -125,19 +131,19 @@ import {
           }
         }}
       >
-        <Box>
-          <IconButton aria-label="skip previous">
-            <SkipPreviousOutlinedIcon/>
+        <Box tag="Box">
+          <IconButton tag="IconButton" aria-label="skip previous">
+            <SkipPreviousOutlinedIcon tag="SkipPreviousOutlinedIcon"/>
           </IconButton>
-          <IconButton aria-label="play">
-            <PlayArrowRoundedIcon/>
+          <IconButton tag="IconButton" aria-label="play">
+            <PlayArrowRoundedIcon tag="PlayArrowRoundedIcon"/>
           </IconButton>
-          <IconButton aria-label="skip next">
-            <SkipNextOutlinedIcon/>
+          <IconButton tag="IconButton" aria-label="skip next">
+            <SkipNextOutlinedIcon tag="SkipNextOutlinedIcon"/>
           </IconButton>
         </Box>
-        <IconButton aria-label="bluetooth">
-          <MediaBluetoothOnIcon/>
+        <IconButton tag="IconButton" aria-label="bluetooth">
+          <MediaBluetoothOnIcon tag="MediaBluetoothOnIcon"/>
         </IconButton>
       </Box>
     </Box>
