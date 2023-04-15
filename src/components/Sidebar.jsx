@@ -2,28 +2,11 @@ import {Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemText, Tool
 import { Logo } from "./Logo.jsx";
 import {Link} from "react-router-dom";
 import { useUrlListener } from "../hooks/useUrlListener.js";
+import {getRouteLinks} from "../pages/routes.jsx";
 
 export const Sidebar = ({ drawerWidth, mobileOpen, handleDrawerToggle }) => {
-  const menuEntries = [
-    {
-      name: "Overview",
-      to: "/"
-    },
-    {
-      name: "Button",
-      to: "/button"
-    },
-    {
-      name: "Card",
-      to: "/card"
-    },
-    {
-      name: "Notification",
-      to: "/notification"
-    }
-  ]
-
-  const activeUrlIdx = useUrlListener(menuEntries.map(e => e.to));
+  const routeLinks = getRouteLinks();
+  const activeUrlIdx = useUrlListener(routeLinks.map(e => e.to));
 
   const isUrlActive = (idx) => {
     return activeUrlIdx === idx;
@@ -36,7 +19,7 @@ export const Sidebar = ({ drawerWidth, mobileOpen, handleDrawerToggle }) => {
       </Toolbar>
       <Divider />
       <List>
-        {menuEntries.map((entry, idx) => (
+        {routeLinks.map((entry, idx) => (
           <ListItem
             key={entry.name}
             sx={{

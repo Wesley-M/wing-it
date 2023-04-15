@@ -6,25 +6,10 @@ import {
   createHashRouter,
   RouterProvider,
 } from "react-router-dom";
-import {Root} from "./Root.jsx";
-import OverviewPage from "./pages/overview.mdx";
-import ButtonPage from "./pages/button.mdx";
-import CardPage from "./pages/card.mdx";
-import NotificationPage from "./pages/notification.mdx";
 import './index.css'
+import {routerTemplate} from "./pages/routes.jsx";
 
-const router = createHashRouter([
-  {
-    path: "/",
-    element: <Root/>,
-    children: [
-      {index: true, element: <OverviewPage/>},
-      {path: "button", element: <ButtonPage/>},
-      {path: "card", element: <CardPage/>},
-      {path: "notification", element: <NotificationPage/>}
-    ]
-  },
-]);
+const router = createHashRouter(routerTemplate);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
