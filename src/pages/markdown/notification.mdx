@@ -1,13 +1,7 @@
 import {Paragraph} from "../../components/Paragraph.jsx";
-import {Avatar, Box, IconButton, Stack, Typography} from "@mui/material";
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
-import SkipPreviousOutlinedIcon from '@mui/icons-material/SkipPreviousOutlined';
-import SkipNextOutlinedIcon from '@mui/icons-material/SkipNextOutlined';
-import MediaBluetoothOnIcon from '@mui/icons-material/MediaBluetoothOn';
-import {
-  ShowCodeBlock
-} from "../../components/ShowCodeBlock.jsx";
+import {ShowCodeBlock} from "../../components/ShowCodeBlock.jsx";
+import {Android13Deezer} from "../components/notification/Android13Deezer.jsx";
+import {Linkedin1} from "../components/notification/Linkedin1.jsx";
 
 # Notification
 ---
@@ -20,132 +14,13 @@ import {
 ## Linkedin inspired
 ---
 
-{/* <ShowCodeBlock>
-  <Box
-    tag="Box"
-    sx={{
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "center",
-      width: "fit-content",
-      maxWidth: "100%",
-      height: "80px",
-      borderRadius: "0.25em",
-      border: "1px solid #28282820"
-    }}
-  >
-    <Avatar
-      tag="Avatar"
-      alt="Company"
-      src="https://media.licdn.com/media/AAYQAgQJAAgAAQAAAAAAADqOZP5J1jpVQKaKm9bNEkz91w.png"
-      variant="square"
-      sx={{width: 60, height: 60, margin: "10px"}}
-    />
-
-    <Typography
-      tag="Typography"
-      sx={{
-        fontSize: "0.9em",
-        overflow: "hidden",
-        whiteSpace: "nowrap"
-      }}
-    ><strong>Resumo de:</strong> quinta-feira: Páscoa com menos vagas temporárias;<br/>chuva no feriadão e outras notícias.</Typography>
-
-    <Stack tag="Stack" sx={{padding: "0 1em"}} alignItems="center">
-      <Typography tag="Typography" sx={{color: "gray", fontSize: "0.8em"}}>5 d</Typography>
-      <IconButton tag="IconButton" aria-label="Show more button">
-        <MoreHorizIcon tag="MoreHorizIcon"/>
-      </IconButton>
-    </Stack>
-  </Box>
+<ShowCodeBlock componentUrl="notification/Linkedin1">
+  <Linkedin1/>
 </ShowCodeBlock>
 
 ## Deezer notification (Android 13)
 ---
 
-<ShowCodeBlock>
-  <Box
-    tag="Box"
-    sx={{
-      display: "flex",
-      flexDirection: "column",
-      padding: "0 1em",
-      width: "300px",
-      height: "130px",
-      borderRadius: "1.25em",
-      backgroundImage: "url(https://picsum.photos/id/62/300/130)",
-      "& .MuiTypography-root": {
-        fontFamily: "Roboto, sans-serif"
-      }
-    }}
-  >
-    <Box
-      tag="Box"
-      sx={{
-        display: "inline-flex",
-        flexDirection: "column",
-        flex: 1,
-        marginTop: "1em",
-        gap: "0.2em"
-      }}
-    >
-      <Typography
-        tag="Typography"
-        sx={{
-          fontSize: "0.75em",
-          fontWeight: "bold",
-          color: "white",
-          opacity: 0.5
-        }}
-      >Deezer</Typography>
-
-      <Typography
-        tag="Typography"
-        sx={{
-          fontSize: "1.2em",
-          fontWeight: "bolder",
-          color: "white"
-        }}
-      >Wuthering Heights</Typography>
-
-      <Typography
-        tag="Typography"
-        sx={{
-          fontSize: "0.7em",
-          fontWeight: "bold",
-          color: "white",
-          opacity: 0.7
-        }}
-      >Anna Maz</Typography>
-    </Box>
-
-    <Box
-      tag="Box"
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        flex: 1,
-        "& .MuiSvgIcon-root": {
-          color: "white",
-          opacity: 0.9
-        }
-      }}
-    >
-      <Box tag="Box">
-        <IconButton tag="IconButton" aria-label="skip previous">
-          <SkipPreviousOutlinedIcon tag="SkipPreviousOutlinedIcon"/>
-        </IconButton>
-        <IconButton tag="IconButton" aria-label="play">
-          <PlayArrowRoundedIcon tag="PlayArrowRoundedIcon"/>
-        </IconButton>
-        <IconButton tag="IconButton" aria-label="skip next">
-          <SkipNextOutlinedIcon tag="SkipNextOutlinedIcon"/>
-        </IconButton>
-      </Box>
-      <IconButton tag="IconButton" aria-label="bluetooth">
-        <MediaBluetoothOnIcon tag="MediaBluetoothOnIcon"/>
-      </IconButton>
-    </Box>
-  </Box>
-</ShowCodeBlock> */}
+<ShowCodeBlock componentUrl="notification/Android13Deezer">
+  <Android13Deezer/>
+</ShowCodeBlock>

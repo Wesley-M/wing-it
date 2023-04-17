@@ -3,7 +3,6 @@ import {Button} from "@mui/material";
 export const Youtube1 = () => {
   return (
     <Button
-      tag="Button"
       sx={{
         height: "36px",
         backgroundColor: "#0f0f0f",

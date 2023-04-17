@@ -150,8 +150,7 @@ export function Bydrec() {
                 '& .MuiPaper-root': {
                   borderRadius: "0px",
                   boxShadow: 2,
-                  borderTop: "3px solid #2ea3f2",
-                  marginTop: "15px"
+                  borderTop: "3px solid #2ea3f2"
                 }
               }}
               {...bindMenu(popupState)}

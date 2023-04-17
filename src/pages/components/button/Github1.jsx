@@ -5,7 +5,6 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 export const Github1 = () => {
   return (
     <Button
-      tag="Button"
       sx={{
         height: "32px",
         backgroundColor: "#347d39",
@@ -26,8 +25,8 @@ export const Github1 = () => {
           backgroundColor: "#46954a",
         }
       }}
-      startIcon={<CodeIcon tag="CodeIcon"/>}
-      endIcon={<ArrowDropDownIcon tag="ArrowDropDownIcon"/>}
+      startIcon={<CodeIcon/>}
+      endIcon={<ArrowDropDownIcon/>}
     >
       Code
     </Button>
