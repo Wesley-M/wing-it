@@ -5,9 +5,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import {Box} from "@mui/material";
 
-export const SourceCodeDialog = ({ open, onClose, component, Source }) => {
+export const SourceCodeDialog = ({ open, onClose, Source }) => {
   return (
     <div>
       <Dialog
@@ -41,21 +40,6 @@ export const SourceCodeDialog = ({ open, onClose, component, Source }) => {
               padding: "0 1em"
             }}
           >
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                border: "1px solid var(--divider)",
-                borderRadius: "5px",
-                width: "100%",
-                height: "auto",
-                marginBottom: "1em",
-                padding: "1em"
-              }}
-            >
-              {component}
-            </Box>
             <Source/>
           </DialogContentText>
         </DialogContent>

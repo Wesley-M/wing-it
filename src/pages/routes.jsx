@@ -1,11 +1,12 @@
 import React from "react";
 import {Root} from "../Root.jsx";
-import {ButtonP, NotificationP, OverviewP} from "./index.js";
+import {ButtonP, NavbarP, NotificationP, OverviewP} from "./index.js";
 
 const routes = [
   {index: true, element: <OverviewP/>, label: "Overview"},
   {path: "button", element: <ButtonP/>, label: "Button"},
-  {path: "notification", element: <NotificationP/>, label: "Notification"}
+  {path: "notification", element: <NotificationP/>, label: "Notification"},
+  {path: "navbar", element: <NavbarP/>, label: "Navbar"}
 ]
 
 const routerTemplate = [

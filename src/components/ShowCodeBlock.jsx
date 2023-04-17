@@ -1,4 +1,3 @@
-import reactElementToJSXString from 'react-element-to-jsx-string';
 import {evaluate} from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
 import {useEffect, useState} from "react";
@@ -6,29 +5,46 @@ import rehypePrism from "@mapbox/rehype-prism";
 import {SourceCodeDialog} from "./SourceCodeDialog.jsx";
 import {Box} from "@mui/material";
 
-export const ShowCodeBlock = ({children}) => {
+export const ShowCodeBlock = ({children, componentUrl}) => {
   const [open, setOpen] = useState(false);
-  const [exports, setExports] = useState({default: runtime.Fragment});
+  const [sourceCode, setSourceCode] = useState({default: runtime.Fragment});
 
   /**
-   * It removes numbers introduced in tag names (e.g. Avatar2)
+   * It formats a block code as in a markdown
+   */
+  const markdownBlockCode = "```jsx \n{} \n ```"
+  
+  /**
+   * It gets the source code of a component from Github
+   * and sets it in the state
+   * @param componentUrl - The url of the component
    * */
-  const handleTagDisplayName = (obj) => {
-    const type = obj?.type;
-    if (typeof type === "string") {
-      return type
-    } else {
-      return obj.props?.tag;
-    }
+  const getSourceCodeOnGithub = async (componentUrl) => {
+    const baseUrl = "https://raw.githubusercontent.com/Wesley-M/wing-it/main/src/pages/components/{}.jsx"
+    const githubUrl = baseUrl.replace("{}", componentUrl)
+    const response = await fetch(githubUrl)
+    return await response.text()
   }
 
-  const childrenString = `\`\`\`jsx \n${reactElementToJSXString(children, { displayName: handleTagDisplayName, filterProps: ["tag"] }).trim()} \n \`\`\``
-
-  // When the children change, it also changes the evaluation of the code block
+  /***
+   * It formats the source code passed as component Url
+  */
   useEffect(() => {
-    evaluate(childrenString, {...runtime, rehypePlugins: [rehypePrism]})
-      .then((exports) => setExports(exports));
-  }, [childrenString]);
+    if (componentUrl) {
+      getSourceCodeOnGithub(componentUrl).then(data => {
+        markdownBlockCode.replace("{}", data)
+      })
+    }
+  }, [componentUrl]);
+
+  /** 
+   * When the source code changes, then re-evaluate the 
+   * rendered markdown
+   * */ 
+  useEffect(() => {
+    evaluate(markdownBlockCode, {...runtime, rehypePlugins: [rehypePrism]})
+      .then((code) => setSourceCode(code));
+  }, [markdownBlockCode]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -38,7 +54,7 @@ export const ShowCodeBlock = ({children}) => {
     setOpen(false);
   }
 
-  const CodeBlock = exports.default;
+  const CodeBlock = sourceCode.default;
 
   return (
     <>
@@ -48,7 +64,6 @@ export const ShowCodeBlock = ({children}) => {
       <SourceCodeDialog
         open={open}
         onClose={handleClose}
-        component={children}
         Source={CodeBlock}
       />
     </>

@@ -9,6 +9,7 @@ import {Paragraph} from "../../components/Paragraph.jsx";
 import {
   ShowCodeBlock
 } from "../../components/ShowCodeBlock.jsx";
+import {DefaultButton} from "../components/button/DefaultButton.jsx";
 
 # Buttons
 ---
@@ -20,11 +21,11 @@ import {
 ## Browser default
 ---
 
-<ShowCodeBlock>
-  <button>Hello</button>
+<ShowCodeBlock componentUrl="button/DefaultButton">
+  <DefaultButton/>
 </ShowCodeBlock>
 
-## Netflix Inspired
+{/* ## Netflix Inspired
 ---
 
 <BaseList>
@@ -152,4 +153,4 @@ import {
     startIcon={<CodeIcon tag="CodeIcon"/>}
     endIcon={<ArrowDropDownIcon tag="ArrowDropDownIcon"/>}
   >Code</Button>
-</ShowCodeBlock>
+</ShowCodeBlock> */}
