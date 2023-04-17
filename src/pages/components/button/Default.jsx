@@ -1,4 +1,4 @@
-export const DefaultButton = () => {
+export const Default = () => {
     return (
         <button>
             Hello

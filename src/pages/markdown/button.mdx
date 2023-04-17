@@ -1,15 +1,12 @@
-import {Button} from "@mui/material";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import HomeIcon from "@mui/icons-material/Home";
-import CodeIcon from '@mui/icons-material/Code';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import {BaseList} from "../../components/BaseList.jsx";
 import {Paragraph} from "../../components/Paragraph.jsx";
-import {
-  ShowCodeBlock
-} from "../../components/ShowCodeBlock.jsx";
-import {DefaultButton} from "../components/button/DefaultButton.jsx";
+import {ShowCodeBlock} from "../../components/ShowCodeBlock.jsx";
+import {Default} from "../components/button/Default.jsx";
+import {Netflix1} from "../components/button/Netflix1.jsx";
+import {Netflix2} from "../components/button/Netflix2.jsx";
+import {Twitter1} from "../components/button/Twitter1.jsx";
+import {Github1} from "../components/button/Github1.jsx";
+import {Youtube1} from "../components/button/Youtube1.jsx";
 
 # Buttons
 ---
@@ -21,136 +18,39 @@ import {DefaultButton} from "../components/button/DefaultButton.jsx";
 ## Browser default
 ---
 
-<ShowCodeBlock componentUrl="button/DefaultButton">
-  <DefaultButton/>
+<ShowCodeBlock componentUrl="button/Default">
+  <Default/>
 </ShowCodeBlock>
 
-{/* ## Netflix Inspired
----
+ ## Netflix Inspired
+ ---
 
-<BaseList>
-  <ShowCodeBlock>
-    <Button
-      tag="Button"
-      sx={{
-        height: "48px",
-        backgroundColor: "rgb(229, 9, 20)",
-        color: "white",
-        fontSize: "1.25em",
-        fontWeight: "bold",
-        fontFamily: "Roboto, sans-serif",
-        border: "none",
-        borderRadius: "0.2em",
-        padding: "1em",
-        "&:hover": {
-          backgroundColor: "rgba(229, 9, 20)",
-          filter: "grayscale(0.1)"
-        }
-      }}
-      endIcon={<ArrowForwardIosIcon tag="ArrowForwardIosIcon"/>}
-    >Get Started</Button>
-  </ShowCodeBlock>
+ <BaseList>
+   <ShowCodeBlock>
+     <Netflix1 />
+   </ShowCodeBlock>
+   <ShowCodeBlock>
+     <Netflix2 />
+   </ShowCodeBlock>
+ </BaseList>
 
-  <ShowCodeBlock>
-    <Button
-      tag="Button"
-      sx={{
-        height: "36px",
-        backgroundColor: "rgba(109, 109, 110, 0.7)",
-        color: "white",
-        fontSize: "1em",
-        fontFamily: "Roboto, sans-serif",
-        border: "none",
-        borderRadius: "0.2em",
-        padding: "0.25em 1em",
-        "& .MuiButton-startIcon>*:nth-of-type(1)": {
-          fontSize: "24px"
-        },
-        "&:hover": {
-          backgroundColor: "rgba(109, 109, 110, 0.8)",
-        }
-      }}
-      startIcon={<InfoOutlinedIcon tag="InfoOutlinedIcon"/>}
-    >More informations</Button>
-  </ShowCodeBlock>
-</BaseList>
+ ## Youtube Inspired
+ ---
 
-## Youtube Inspired
----
+ <ShowCodeBlock>
+   <Youtube1/>
+ </ShowCodeBlock>
 
-<ShowCodeBlock>
-  <Button
-    tag="Button"
-    sx={{
-      height: "36px",
-      backgroundColor: "#0f0f0f",
-      color: "white",
-      fontSize: "0.9em",
-      fontWeight: "bold",
-      fontFamily: "Roboto, sans-serif",
-      border: "none",
-      borderRadius: "1.5em",
-      padding: "0.3em 1.5em",
-      "&:hover": {
-        backgroundColor: "#0f0f0fdd",
-      }
-    }}
-  >Subscribe</Button>
-</ShowCodeBlock>
+ ## Twitter Inspired
+ ---
 
-## Twitter Inspired
----
+ <ShowCodeBlock>
+   <Twitter1 />
+ </ShowCodeBlock>
 
-<ShowCodeBlock>
-  <Button
-    tag="Button"
-    sx={{
-      height: "48px",
-      backgroundColor: "transparent",
-      color: "rgb(15, 20, 25)",
-      fontSize: "1.2em",
-      fontFamily: "Roboto, sans-serif",
-      border: "none",
-      borderRadius: "2em",
-      padding: "0.5em 1em",
-      "& .MuiButton-startIcon>*:nth-of-type(1)": {
-        fontSize: "24px"
-      },
-      "&:hover": {
-        backgroundColor: "#00000022",
-      }
-    }}
-    startIcon={<HomeIcon tag="HomeIcon"/>}
-  >Home</Button>
-</ShowCodeBlock>
+ ## Github Inspired
+ ---
 
-## Github Inspired
----
-
-<ShowCodeBlock>
-  <Button
-    tag="Button"
-    sx={{
-      height: "32px",
-      backgroundColor: "#347d39",
-      color: "white",
-      fontSize: "0.9em",
-      fontFamily: "Roboto, sans-serif",
-      border: "1px solid rgba(205,217,229,0.1)",
-      borderRadius: "0.4em",
-      padding: "0.25em 0.75em",
-      "& .MuiButton-startIcon>*:nth-of-type(1)": {
-        fontSize: "24px",
-        marginRight: "-4px"
-      },
-      "& .MuiButton-endIcon>*:nth-of-type(1)": {
-        marginLeft: "-8px"
-      },
-      "&:hover": {
-        backgroundColor: "#46954a",
-      }
-    }}
-    startIcon={<CodeIcon tag="CodeIcon"/>}
-    endIcon={<ArrowDropDownIcon tag="ArrowDropDownIcon"/>}
-  >Code</Button>
-</ShowCodeBlock> */}
+ <ShowCodeBlock>
+   <Github1/>
+ </ShowCodeBlock>

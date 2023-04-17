@@ -1,19 +1,20 @@
-import {evaluate} from "@mdx-js/mdx";
+import { evaluate } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import rehypePrism from "@mapbox/rehype-prism";
-import {SourceCodeDialog} from "./SourceCodeDialog.jsx";
-import {Box} from "@mui/material";
+import { SourceCodeDialog } from "./SourceCodeDialog.jsx";
+import { Box } from "@mui/material";
 
-export const ShowCodeBlock = ({children, componentUrl}) => {
+export const ShowCodeBlock = ({ children, componentUrl }) => {
   const [open, setOpen] = useState(false);
-  const [sourceCode, setSourceCode] = useState({default: runtime.Fragment});
+  const [githubCode, setGithubCode] = useState("");
+  const [parsedCode, setParsedCode] = useState({ default: runtime.Fragment });
 
   /**
    * It formats a block code as in a markdown
    */
-  const markdownBlockCode = "```jsx \n{} \n ```"
-  
+  const mdTemplate = "```jsx \n{} \n ```"
+
   /**
    * It gets the source code of a component from Github
    * and sets it in the state
@@ -32,7 +33,7 @@ export const ShowCodeBlock = ({children, componentUrl}) => {
   useEffect(() => {
     if (componentUrl) {
       getSourceCodeOnGithub(componentUrl).then(data => {
-        markdownBlockCode.replace("{}", data)
+        setGithubCode(data)
       })
     }
   }, [componentUrl]);
@@ -40,11 +41,13 @@ export const ShowCodeBlock = ({children, componentUrl}) => {
   /** 
    * When the source code changes, then re-evaluate the 
    * rendered markdown
-   * */ 
+   * */
   useEffect(() => {
-    evaluate(markdownBlockCode, {...runtime, rehypePlugins: [rehypePrism]})
-      .then((code) => setSourceCode(code));
-  }, [markdownBlockCode]);
+    evaluate(
+      mdTemplate.replace("{}", githubCode),
+      { ...runtime, rehypePlugins: [rehypePrism] }
+    ).then((code) => setParsedCode(code));
+  }, [githubCode]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -54,7 +57,7 @@ export const ShowCodeBlock = ({children, componentUrl}) => {
     setOpen(false);
   }
 
-  const CodeBlock = sourceCode.default;
+  const CodeBlock = parsedCode.default;
 
   return (
     <>
