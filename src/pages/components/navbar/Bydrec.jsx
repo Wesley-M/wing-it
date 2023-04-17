@@ -30,7 +30,7 @@ const pages = {
   'Contact': []
 }
 
-export function BydrecNavbar() {
+export function Bydrec() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const popupState = usePopupState({ variant: 'popover', popupId: 'demoMenu' })
 
@@ -169,4 +169,4 @@ export function BydrecNavbar() {
   );
 }
 
-export default BydrecNavbar;
+export default Bydrec;

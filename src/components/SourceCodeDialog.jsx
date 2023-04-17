@@ -5,8 +5,9 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import {Stack, Typography} from "@mui/material";
 
-export const SourceCodeDialog = ({ open, onClose, Source }) => {
+export const SourceCodeDialog = ({open, onClose, Source, loading}) => {
   return (
     <div>
       <Dialog
@@ -40,7 +41,14 @@ export const SourceCodeDialog = ({ open, onClose, Source }) => {
               padding: "0 1em"
             }}
           >
-            <Source/>
+            {loading ? (
+              <Stack direction="row" alignItems="center" gap={2}>
+                <img style={{ width: "3em", height: "3em" }} src="/github-loading.gif"/>
+                <Typography sx={{ fontWeight: "bold", opacity: 0.4 }}>Code is not available yet...</Typography>
+              </Stack>
+            ) : (
+              <Source/>
+            )}
           </DialogContentText>
         </DialogContent>
         <DialogActions>

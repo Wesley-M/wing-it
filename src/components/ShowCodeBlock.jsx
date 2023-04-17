@@ -7,6 +7,7 @@ import { Box } from "@mui/material";
 
 export const ShowCodeBlock = ({ children, componentUrl }) => {
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [githubCode, setGithubCode] = useState("");
   const [parsedCode, setParsedCode] = useState({ default: runtime.Fragment });
 
@@ -43,10 +44,15 @@ export const ShowCodeBlock = ({ children, componentUrl }) => {
    * rendered markdown
    * */
   useEffect(() => {
-    evaluate(
-      mdTemplate.replace("{}", githubCode),
-      { ...runtime, rehypePlugins: [rehypePrism] }
-    ).then((code) => setParsedCode(code));
+    if (githubCode) {
+      evaluate(
+        mdTemplate.replace("{}", githubCode),
+        { ...runtime, rehypePlugins: [rehypePrism] }
+      ).then((code) => {
+        setParsedCode(code);
+        setLoading(false);
+      });
+    }
   }, [githubCode]);
 
   const handleOpen = () => {
@@ -68,6 +74,7 @@ export const ShowCodeBlock = ({ children, componentUrl }) => {
         open={open}
         onClose={handleClose}
         Source={CodeBlock}
+        loading={loading}
       />
     </>
   )
